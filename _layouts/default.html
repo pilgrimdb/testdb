@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.github.project_tagline }}</title>
+    <meta charset="utf-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    {% if page.synopsis %}
+    <meta name="description" content="{{ page.synopsis }}" />
+    <meta property="og:description" content="{{ page.synopsis }}" />
+    {% else %}
+    <meta name="description" content="{{ site.github.project_tagline }}">
+    <meta property="og:description" content="{{ site.github.project_tagline }}" />
+    {% endif %}
+    <meta name="author" content="Site contributors" />
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+    {% endif %}
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/css/stylesheet.css" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <h1 id="project_tagline"><a href="/" style="text-decoration:none; color: white">{{ site.github.project_tagline }}</a></h1>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p><a id="forkme_banner" href="{{site.github.repository_url}}/blob/master/{% if page.layout == 'default' %}{{page.path}}{% else %}{{page.relative_path}}{% endif %}">Suggest changes to this page on GitHub</a>
+        Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
